@@ -4,111 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eternal Shadow Nexus</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <video autoplay loop muted playsinline class="bg-video">
-        <source src="videos/background.mp4" type="video/mp4">
-    </video>
-    <div class="overlay">
-        <h1>Bienvenue sur Eternal Shadow Nexus</h1>
-        <p>Le meilleur site pour les fans d'anime et de technologie.</p>
-    </div>
-    
-    <!-- Barre de navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="images/logo.png" class="logo-nav" alt="Eternal Shadow Nexus"> Eternal Shadow Nexus
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">À propos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#categories">Catégories</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#download">Téléchargements</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+    <!-- Navigation des Onglets -->
+    <div class="container mt-4">
+        <ul class="nav nav-tabs" id="categoryTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="anime-tab" data-bs-toggle="tab" href="#anime" role="tab" aria-controls="anime" aria-selected="true">Anime & Manga</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="informatique-tab" data-bs-toggle="tab" href="#informatique" role="tab" aria-controls="informatique" aria-selected="false">Informatique</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="downloads-tab" data-bs-toggle="tab" href="#downloads" role="tab" aria-controls="downloads" aria-selected="false">Téléchargements</a>
+            </li>
+        </ul>
+
+        <div class="tab-content" id="categoryTabsContent">
+            <!-- Anime & Manga -->
+            <div class="tab-pane fade show active" id="anime" role="tabpanel" aria-labelledby="anime-tab">
+                <h3>Anime & Manga</h3>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="images/anime1.jpg" class="card-img-top" alt="Anime1">
+                            <div class="card-body">
+                                <h5 class="card-title">Naruto</h5>
+                                <p class="card-text">Un manga d'action avec des ninjas.</p>
+                                <a href="#" class="btn btn-primary">Voir</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Ajoute plus de cards -->
+                </div>
+            </div>
+
+            <!-- Informatique -->
+            <div class="tab-pane fade" id="informatique" role="tabpanel" aria-labelledby="informatique-tab">
+                <h3>Informatique</h3>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="images/tech1.jpg" class="card-img-top" alt="Tech1">
+                            <div class="card-body">
+                                <h5 class="card-title">Programmation Web</h5>
+                                <p class="card-text">Un article sur les bases de la programmation front-end et back-end.</p>
+                                <a href="#" class="btn btn-secondary">Lire</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Ajoute plus de cards -->
+                </div>
+            </div>
+
+            <!-- Téléchargements -->
+            <div class="tab-pane fade" id="downloads" role="tabpanel" aria-labelledby="downloads-tab">
+                <h3>Téléchargements</h3>
+                <ul class="list-unstyled">
+                    <li><a href="downloads/app.zip" class="btn btn-success">Télécharger l'Application</a></li>
+                    <li><a href="downloads/video.mp4" class="btn btn-info">Télécharger la Vidéo</a></li>
+                    <li><a href="downloads/image.jpg" class="btn btn-warning">Télécharger l'Image</a></li>
                 </ul>
             </div>
         </div>
-    </nav>
-    <button class="btn-anim">Explorer</button>
+    </div>
 
-    <!-- Section d'accueil -->
-    <header class="hero">
-        <div class="overlay"></div>
-        <div class="container text-center">
-            <img src="images/logo.png" class="logo" alt="Eternal Shadow Nexus">
-            <h1 class="mt-4">Bienvenue sur Eternal Shadow Nexus</h1>
-            <p>Le site ultime dédié à la culture anime, manga, informatique et bien plus.</p>
-            <a href="#categories" class="btn btn-custom">Explorer</a>
-            <a href="#download" class="btn btn-custom">Télécharger</a>
-        </div>
-    </header>
+    <!-- JS Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    // Fonction pour basculer entre les catégories
+    function showCategory(category) {
+        // Cacher toutes les sections
+        document.querySelectorAll('.tab-pane').forEach(function(section) {
+            section.classList.remove('show', 'active');
+        });
 
-    <!-- Section À propos -->
-    <section id="about" class="about-section">
-        <div class="container text-center">
-            <h2>À propos de nous</h2>
-            <p>Eternal Shadow Nexus est une plateforme dédiée aux passionnés d'anime, de manga et d'informatique. Découvrez des contenus exclusifs, téléchargez des ressources et partagez votre passion !</p>
-        </div>
-    </section>
-
-    <!-- Section Catégories -->
-    <section id="categories" class="categories-section">
-        <div class="container text-center">
-            <h2>Nos Catégories</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="images/anime.jpg" class="card-img-top" alt="Anime">
-                        <div class="card-body">
-                            <h5 class="card-title">Anime & Manga</h5>
-                            <p class="card-text">Regardez et découvrez les meilleurs animes et mangas.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="images/informatique.jpg" class="card-img-top" alt="Informatique">
-                        <div class="card-body">
-                            <h5 class="card-title">Informatique</h5>
-                            <p class="card-text">Apprenez à coder, découvrez des astuces et des logiciels.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="images/download.jpg" class="card-img-top" alt="Téléchargements">
-                        <div class="card-body">
-                            <h5 class="card-title">Téléchargements</h5>
-                            <p class="card-text">Téléchargez des applications, vidéos, et images.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Téléchargements -->
-    <section id="download" class="download-section">
-        <div class="container text-center">
-            <h2>Téléchargez nos contenus</h2>
-            <p>Accédez à nos ressources exclusives en quelques clics.</p>
-            <a href="#" class="btn btn-custom">Voir les téléchargements</a>
-        </div>
-    </section>
-
-    <!-- Pied de page -->
-    <footer class="footer">
-        <div class="container text-center">
-            <p>&copy; 2025 Eternal Shadow Nexus. Tous droits réservés.</p>
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        // Afficher la section sélectionnée
+        document.getElementById(category).classList.add('show', 'active');
+    }
+    </script>
 </body>
-</html>
+        </html>
