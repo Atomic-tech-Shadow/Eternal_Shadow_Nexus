@@ -1,109 +1,119 @@
-/* Vidéo en fond d'écran */
+/* Style général */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
 .bg-video {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     z-index: -1;
 }
 
-/* Effet de fondu pour le texte */
-.overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: white;
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
-    font-size: 2rem;
-    animation: fadeIn 2s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-/* Barre de navigation */
-.navbar-brand {
-    font-size: 22px;
-    font-weight: bold;
-}
-
-.logo-nav {
-    width: 40px;
-    margin-right: 10px;
-}
-
-/* Hero Section */
+/* Section d'accueil */
 .hero {
     position: relative;
-    height: 100vh;
-    background: url('images/background.jpg') no-repeat center center fixed;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-}
-
-/* Sections */
-.about-section, .categories-section, .download-section {
-    padding: 80px 0;
-    text-align: center;
-    background: #111;
     color: white;
+    padding: 60px 0;
 }
 
-.categories-section .card {
-    background: #222;
-    color: white;
-    transition: transform 0.3s ease;
-}
-
-.categories-section .card:hover {
-    transform: scale(1.05);
-}
-
-/* Pied de page */
-.footer {
-    background: #000;
-    color: white;
-    padding: 20px 0;
-}
-
-.overlay::before {
-    content: "";
+.hero .overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    z-index: -1;
 }
 
+.hero h1, .hero p {
+    z-index: 1;
+}
+
+/* Boutons animés */
 .btn-anim {
-    background: #ff0055;
-    color: white;
+    position: relative;
+    overflow: hidden;
     padding: 10px 20px;
-    font-size: 1.5rem;
+    font-size: 18px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-anim:before {
+    content: '';
+    position: absolute;
+    width: 300%;
+    height: 300%;
+    background: #FF5733;
+    transition: all 0.4s ease;
+    transform: scale(0);
+    top: 50%;
+    left: 50%;
+    z-index: 0;
+    border-radius: 50%;
+    animation: animationBtn 0.6s forwards;
+}
+
+.btn-anim:hover {
+    color: #fff;
+}
+
+.btn-anim:hover:before {
+    transform: scale(1);
+    top: 0;
+    left: 0;
+}
+
+@keyframes animationBtn {
+    100% {
+        transform: scale(1);
+        top: 0;
+        left: 0;
+    }
+}
+
+/* Navigation */
+.navbar {
+    background-color: #333;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar .navbar-brand img {
+    height: 40px;
+}
+
+/* Section Catégories */
+.categories-section {
+    padding: 60px 0;
+    background-color: #f4f4f4;
+}
+
+.card {
+    margin-bottom: 30px;
     border: none;
     border-radius: 10px;
-    cursor: pointer;
-    animation: pulse 2s infinite;
 }
 
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
+.card-img-top {
+    border-radius: 10px;
+}
+
+/* Pied de page */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+}
+
+.footer p {
+    margin: 0;
 }
