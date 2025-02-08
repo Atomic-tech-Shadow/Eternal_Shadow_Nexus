@@ -1,26 +1,19 @@
-import React from "react";
-import { motion } from "framer-motion";
+kimport React from "react";
 import "./Navbar.css";
 
-const Navbar = () => {
+function Navbar() {
   return (
-    <motion.nav
-      initial={{ y: -50, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      className="navbar"
-    >
-      <div className="logo">Eternal Shadow Nexus</div>
+    <nav className="navbar">
+      <h1>Eternal Shadow Nexus</h1>
       <ul>
-        <li><a href="#home">Accueil</a></li>
-        <li><a href="#anime">Anime</a></li>
-        <li><a href="#manga">Manga</a></li>
-        <li><a href="#videos">Vidéos</a></li>
-        <li><a href="#informatique">Informatique</a></li>
-        <li><a href="#download">Téléchargements</a></li>
+        <li><a href="#">Accueil</a></li>
+        <li><a href="#">Anime</a></li>
+        <li><a href="#">Manga</a></li>
+        <li><a href="#">Vidéos</a></li>
       </ul>
-    </motion.nav>
+    </nav>
   );
-};
+}
 
 export default Navbar;
+

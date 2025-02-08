@@ -11,7 +11,7 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="App">
+    <>
       <Navbar />
       <Hero />
       <AnimeSection />
@@ -20,7 +20,7 @@ function App() {
       <InformatiqueSection />
       <DownloadSection />
       <Footer />
-    </div>
+    </>
   );
 }
 
