@@ -1,24 +1,17 @@
 import React from "react";
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import AnimeSection from "./components/AnimeSection";
-import MangaSection from "./components/MangaSection";
-import VideosSection from "./components/VideosSection";
-import InformatiqueSection from "./components/InformatiqueSection";
-import DownloadSection from "./components/DownloadSection";
-import Footer from "./components/Footer";
-import "./App.css";
+import GlobalStyles from "./styles/GlobalStyles";
+import HeroSection from "./sections/HeroSection";
+import Features from "./sections/Features";
+import Gallery from "./sections/Gallery";
+import Footer from "./sections/Footer";
 
 function App() {
   return (
     <>
-      <Navbar />
-      <Hero />
-      <AnimeSection />
-      <MangaSection />
-      <VideosSection />
-      <InformatiqueSection />
-      <DownloadSection />
+      <GlobalStyles />
+      <HeroSection />
+      <Features />
+      <Gallery />
       <Footer />
     </>
   );
