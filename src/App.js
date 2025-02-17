@@ -82,7 +82,7 @@ function App() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
         >
-          Le site d’anime ultime
+          Le site d’anime ultime créer par cid
         </Subtitle>
       </Header>
 
